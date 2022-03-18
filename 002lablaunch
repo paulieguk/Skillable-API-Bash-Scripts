@@ -1,0 +1,16 @@
+#!/bin/bash
+# This script will launch a LOD lab API using Bash
+
+# Set your api key
+api_key='api_key: 64cc4ef6-9d39-4ebf-bb58-090328433a7d'
+baseURL=https://labondemand.com/api/v3
+apiCMD=launch
+labId=46864
+UserId=UserID
+firstName=FName
+lastName=LName
+
+apiCMD=$apiCMD?labid\=$labId\&userid\=$UserId\&firstname\=$firstName\&lastname\=$lastName
+
+
+curl --location --request GET $baseURL/$apiCMD --header "$api_key"
