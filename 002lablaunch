@@ -13,4 +13,6 @@ lastName=LName
 apiCMD=$apiCMD?labid\=$labId\&userid\=$UserId\&firstname\=$firstName\&lastname\=$lastName
 
 
-curl --location --request GET $baseURL/$apiCMD --header "$api_key"
+apiResponse=$( curl --location --request GET $baseURL/$apiCMD --header "$api_key")
+
+#Need to look at using jq to manage the JSON response
