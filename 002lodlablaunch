@@ -1,0 +1,18 @@
+#!/bin/bash
+# This script will launch a LOD lab API using Bash
+
+# Set your api key below remoing the <> brackets
+api_key='api_key: <API Key Goes here>'
+baseURL=https://labondemand.com/api/v3
+apiCMD=launch
+labId=46864
+UserId=UserID
+firstName=FName
+lastName=LName
+
+apiCMD=$apiCMD?labid\=$labId\&userid\=$UserId\&firstname\=$firstName\&lastname\=$lastName
+
+
+apiResponse=$( curl --location --request GET $baseURL/$apiCMD --header "$api_key")
+
+#Need to look at using jq to manage the JSON response
